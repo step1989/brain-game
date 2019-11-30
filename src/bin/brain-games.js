@@ -1,5 +1,5 @@
 #!/usr/bin/nodejs
-import nameQuestion from './index';
+import { nameQuestion, welcome } from './index';
 
-console.log('Welcome to the Brain Games!');
+welcome();
 nameQuestion();
