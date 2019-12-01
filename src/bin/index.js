@@ -5,7 +5,7 @@ export const welcome = () => console.log('Welcome to the Brain Games!');
 
 export const nameQuestion = () => {
   const name = readlinesync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!\n`);
   return name;
 };
 
