@@ -14,3 +14,10 @@ export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)
 
 // функция проверки числа на четность
 export const isEven = (number) => number % 2 === 0;
+
+// 3 функции для мгры brain calc
+export const addition = (a, b) => a + b;
+
+export const substraction = (a, b) => a - b;
+
+export const multi = (a, b) => a * b;
