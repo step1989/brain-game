@@ -1,6 +1,7 @@
 import evenGame from './game-even';
 import calcGame from './game-calc';
 import gcdGame from './game-gcd';
+import progressionGame from './game-progression';
 import { nameQuestion, welcome } from '../index';
 
 const game = (gameNumber, description) => {
@@ -24,6 +25,9 @@ const game = (gameNumber, description) => {
         break;
       case 'brain-gcd':
         resultGame = gcdGame();
+        break;
+      case 'brain-progression':
+        resultGame = progressionGame();
         break;
       default:
     }

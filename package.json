@@ -7,7 +7,8 @@
     "brain-games": "dist/bin/brain-games.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-gcd": "dist/bin/brain-gcd.js"
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "files": [
     "dist"
@@ -28,7 +29,8 @@
   },
   "homepage": "https://github.com/step1989/frontend-project-lvl1#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "@hexlet/pairs": "^1.0.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
