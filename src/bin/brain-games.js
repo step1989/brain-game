@@ -1,5 +1,5 @@
 #!/usr/bin/nodejs
-import { nameQuestion, welcome } from './index';
+import { nameQuestion, welcome } from '../index';
 
 welcome();
 nameQuestion();
