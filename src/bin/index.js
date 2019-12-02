@@ -50,6 +50,18 @@ export const arihmProgress = (start, length, sub, pass) => {
     const pair = cons(car(acc), `${cdr(acc)} ${counter + sub}`);
     return iter(counter + sub, pair);
   };
+
   const pair = iter(start, cons(answerMinusSub, String(start)));
   return pair;
+};
+// функция проверки является ли число простым
+export const isPrime = (number) => {
+  if (number < 2) {
+    console.log('number must be greater 1');
+    return false;
+  }
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) return false;
+  }
+  return true;
 };

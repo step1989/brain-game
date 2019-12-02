@@ -1,10 +1,12 @@
 import evenGame from './game-even';
 import calcGame from './game-calc';
 import gcdGame from './game-gcd';
+import primeGame from './game-prime';
 import progressionGame from './game-progression';
 import { nameQuestion, welcome } from '../index';
 
 const game = (gameNumber, description) => {
+  // приветствие
   welcome();
   // вывод описания игры
   console.log(description);
@@ -29,6 +31,9 @@ const game = (gameNumber, description) => {
       case 'brain-progression':
         resultGame = progressionGame();
         break;
+      case 'brain-prime':
+        resultGame = primeGame();
+        break;
       default:
     }
     // если ответ верный повторяем игру
@@ -39,7 +44,7 @@ const game = (gameNumber, description) => {
     // если ответ неверный завершаем игру
     return false;
   };
-
+  // запускаем рекурсивную функцию
   if (step(0)) console.log(`Congratulations, ${namePlayer}!`);
   else console.log(`Let's try again, ${namePlayer}!`);
 };
