@@ -3,21 +3,10 @@ import calcGame from './game-calc';
 import gcdGame from './game-gcd';
 import { nameQuestion, welcome } from '../index';
 
-const game = (gameNumber) => {
+const game = (gameNumber, description) => {
   welcome();
-
-  switch (gameNumber) {
-    case 'brain-even':
-      console.log('Answer "yes" if the number is even, otherwise answer "no".');
-      break;
-    case 'brain-calc':
-      console.log('What is the result of the expression?');
-      break;
-    case 'brain-gcd':
-      console.log('Find the greatest common divisor of given numbers.');
-      break;
-    default:
-  }
+  // вывод описания игры
+  console.log(description);
   // Спрашиваем и получаем имя игрока
   const namePlayer = nameQuestion();
   // что бы выиграть необходимо дать 3 верных ответа
