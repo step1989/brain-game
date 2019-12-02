@@ -7,6 +7,7 @@
 
 ### Установка
 ```sudo npm install -g brain-games-rsv```
+> [![asciicast](https://asciinema.org/a/Lid4WwtFj2N4HX4gJccJfcFSg.svg)](https://asciinema.org/a/Lid4WwtFj2N4HX4gJccJfcFSg)
 ##### Список игр:
 ##### brain-games
 > Выводит приветствие. Спрашивает имя. Выводит имя на экран
