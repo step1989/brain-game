@@ -6,8 +6,6 @@ import { nameQuestion, welcome } from '../index';
 const game = (gameNumber) => {
   welcome();
 
-  let counter = 0;
-
   switch (gameNumber) {
     case 'brain-even':
       console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -20,15 +18,13 @@ const game = (gameNumber) => {
       break;
     default:
   }
-  console.log('\n');
   // Спрашиваем и получаем имя игрока
   const namePlayer = nameQuestion();
-
-  while (true) {
+  // что бы выиграть необходимо дать 3 верных ответа
+  // используем рекурсивную функцию
+  const step = (counter) => {
+    if (counter === 3) return true;
     let resultGame;
-
-    // игра прекращается если были даны 3 верных ответа
-    if (counter === 3) return console.log(`Congratulations, ${namePlayer}!`);
 
     switch (gameNumber) {
       case 'brain-even':
@@ -42,13 +38,16 @@ const game = (gameNumber) => {
         break;
       default:
     }
-
+    // если ответ верный повторяем игру
     if (resultGame) {
       console.log('Correct!');
-      counter += 1;
-    } else {
-      return console.log(`Let's try again, ${namePlayer}!`);
+      return step(counter + 1);
     }
-  }
+    // если ответ неверный завершаем игру
+    return false;
+  };
+
+  if (step(0)) console.log(`Congratulations, ${namePlayer}!`);
+  else console.log(`Let's try again, ${namePlayer}!`);
 };
 export default game;
