@@ -1,5 +1,6 @@
 import evenGame from './game-even';
 import calcGame from './game-calc';
+import gcdGame from './game-gcd';
 import { nameQuestion, welcome } from '../index';
 
 const game = (gameNumber) => {
@@ -8,14 +9,18 @@ const game = (gameNumber) => {
   let counter = 0;
 
   switch (gameNumber) {
-    case 1:
-      console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+    case 'brain-even':
+      console.log('Answer "yes" if the number is even, otherwise answer "no".');
       break;
-    case 2:
+    case 'brain-calc':
       console.log('What is the result of the expression?');
+      break;
+    case 'brain-gcd':
+      console.log('Find the greatest common divisor of given numbers.');
       break;
     default:
   }
+  console.log('\n');
   // Спрашиваем и получаем имя игрока
   const namePlayer = nameQuestion();
 
@@ -31,6 +36,9 @@ const game = (gameNumber) => {
         break;
       case 'brain-calc':
         resultGame = calcGame();
+        break;
+      case 'brain-gcd':
+        resultGame = gcdGame();
         break;
       default:
     }

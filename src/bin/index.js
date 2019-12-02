@@ -21,3 +21,8 @@ export const addition = (a, b) => a + b;
 export const substraction = (a, b) => a - b;
 
 export const multi = (a, b) => a * b;
+
+export const nod = (a, b) => {
+  if (b === 0) return a;
+  return nod(b, a % b);
+};
