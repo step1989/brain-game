@@ -8,6 +8,8 @@
 ### Установка
 ```sudo npm install -g brain-games-rsv```
 ##### Список игр:
+##### brain-games
+> Выводит приветствие. Спрашивает имя. Выводит имя на экран
 ##### brain-even
 > Игра проверка на четность. Необходимо ответить четное числи или нет.
 > [![asciicast](https://asciinema.org/a/BW5rolYm4FmR1NiMn8s1VzF7Q.svg)](https://asciinema.org/a/BW5rolYm4FmR1NiMn8s1VzF7Q)
