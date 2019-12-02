@@ -1,7 +1,12 @@
 {
   "name": "brain-games-rsv",
-  "version": "1.0.4",
-  "description": "",
+  "version": "1.0.6",
+  "description": "Console game from frontend course hexlet",
+  "keywords": [
+    "game",
+    "hexlet",
+    "js"
+  ],
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
