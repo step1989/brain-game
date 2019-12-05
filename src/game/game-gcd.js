@@ -1,7 +1,7 @@
 import { cons } from '@hexlet/pairs';
 import runGame from '../launcher';
+import random from '../lib/secondary-function';
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // функция для вычисления НОД
 const nod = (a, b) => {
   if (b === 0) return a;
@@ -13,8 +13,8 @@ const gameGcd = () => {
     const min = 0;
     const max = 100;
 
-    const numberOne = getRandomInt(min, max);
-    const numberSecond = getRandomInt(min, max);
+    const numberOne = random(min, max);
+    const numberSecond = random(min, max);
 
     const quastion = `${numberOne} ${numberSecond}`;
     const answer = String(nod(numberOne, numberSecond));

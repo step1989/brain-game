@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runGame from '../launcher';
+import random from '../lib/secondary-function';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -11,7 +12,6 @@ const isPrime = (number) => {
   }
   return true;
 };
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // функция игры четное\ нечетное
 const gamePrime = () => {
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -23,7 +23,7 @@ const gamePrime = () => {
     const isYes = 'yes'; //
     const isNo = 'no';
 
-    const question = getRandomInt(min, max);
+    const question = random(min, max);
     const answer = isPrime(question) ? isYes : isNo;
     // пара вопрос ответ
     const pairQA = cons(question, answer);

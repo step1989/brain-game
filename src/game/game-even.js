@@ -1,9 +1,9 @@
 import { cons } from '@hexlet/pairs';
 import runGame from '../launcher';
+import random from '../lib/secondary-function';
 
 // функция проверки числа на четность
 const isEven = (number) => number % 2 === 0;
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // функция игры четное\ нечетное
 const gameEven = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -15,7 +15,7 @@ const gameEven = () => {
     const isYes = 'yes'; //
     const isNo = 'no';
 
-    const question = getRandomInt(min, max);
+    const question = random(min, max);
     const answer = isEven(question) ? isYes : isNo;
     // пара вопрос ответ
     const pairQA = cons(question, answer);

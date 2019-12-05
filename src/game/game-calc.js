@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runGame from '../launcher';
+import random from '../lib/secondary-function';
 
 const addition = (a, b) => a + b;
 const substraction = (a, b) => a - b;
@@ -16,7 +17,6 @@ const resultOperation = (operation, numberOne, numberSecond) => {
       return false;
   }
 };
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // игра четное\ нечетное
 const gameCalc = () => {
   const description = 'What is the result of the expression?';
@@ -25,11 +25,11 @@ const gameCalc = () => {
     const min = 1;
     const max = 20;
 
-    const numberOne = getRandomInt(min, max);
-    const numberSecond = getRandomInt(min, max);
+    const numberOne = random(min, max);
+    const numberSecond = random(min, max);
     // операция
     const operationList = '+-*';
-    const indexOperation = getRandomInt(0, 3);
+    const indexOperation = random(0, 3);
     const operation = operationList[indexOperation];
 
     const quastion = `${numberOne} ${operation} ${numberSecond}`;
