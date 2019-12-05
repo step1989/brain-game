@@ -1,12 +1,13 @@
-import readlinesync from 'readline-sync';
-import run from '../launcher';
-import { cons, car, cdr, toString } from '@hexlet/pairs';
+import { cons } from '@hexlet/pairs';
+import runGame from '../launcher';
 
+// функция проверки числа на четность
+const isEven = (number) => number % 2 === 0;
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // функция игры четное\ нечетное
-const gameEven = () =>{
+const gameEven = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-  
-  const runGame = () => {
+  const game = () => {
     // числа для диапозона выбора случайного числа
     const min = 1;
     const max = 101;
@@ -20,13 +21,6 @@ const gameEven = () =>{
     const pairQA = cons(question, answer);
     return pairQA;
   };
-  //const a = gameEven();
-  run(description, runGame);
+  runGame(description, game);
 };
-
-// функция проверки числа на четность
-const isEven = (number) => number % 2 === 0;
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
 export default gameEven;

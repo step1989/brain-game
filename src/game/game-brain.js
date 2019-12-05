@@ -1,11 +1,10 @@
-import run from '../launcher';
-import { cons, car, cdr } from '@hexlet/pairs';
+import runGame from '../launcher';
 
 const gameBrain = () => {
   const description = '';
 
   const game = () => {};
-  run(description, game);
+  runGame(description, game);
 };
 
 

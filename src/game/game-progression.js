@@ -1,21 +1,5 @@
-import run from '../launcher';
 import { cons, car, cdr } from '@hexlet/pairs';
-
-const gameProgression = () => {
-  const description = 'What number is missing in the progression?';
-  const game = () => {
-    // подготавливаем параметры для получения пары - ответ, прогрессия
-    const start = getRandomInt(1, 20);
-    const length = 10;
-    const sub = getRandomInt(1, 11);
-    const pass = getRandomInt(1, length);
-
-    // получаем пару вопрос, ответ
-    const pairQA = arihmProgress(start, length, sub, pass);
-    return pairQA;
-  };
-  run(description, game);
-};
+import runGame from '../launcher';
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
@@ -46,5 +30,22 @@ const arihmProgress = (start, length, sub, pass) => {
   const pair = iter(start, cons(String(start), answerMinusSub));
   return pair;
 };
+
+const gameProgression = () => {
+  const description = 'What number is missing in the progression?';
+  const game = () => {
+    // подготавливаем параметры для получения пары - ответ, прогрессия
+    const start = getRandomInt(1, 20);
+    const length = 10;
+    const sub = getRandomInt(1, 11);
+    const pass = getRandomInt(1, length);
+
+    // получаем пару вопрос, ответ
+    const pairQA = arihmProgress(start, length, sub, pass);
+    return pairQA;
+  };
+  runGame(description, game);
+};
+
 
 export default gameProgression;
