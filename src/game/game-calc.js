@@ -1,49 +1,45 @@
-import readlinesync from 'readline-sync';
-import {
-  getRandomInt,
-  addition,
-  substraction,
-  multi,
-} from '../index';
+import { getRandomInt } from '../index';
+import run from '../game/launcher';
+import { cons, car, cdr } from '@hexlet/pairs';
+
 // игра четное\ нечетное
 const gameCalc = () => {
-  const min = 1;
-  const max = 20;
 
-  const operationList = '+-*';
+  const description = 'What is the result of the expression?';
+  
+  const game = () => {
 
-  const numberOne = getRandomInt(min, max);
-  const numberSecond = getRandomInt(min, max);
-  // операция
-  const operation = operationList[getRandomInt(0, 3)];
+    const min = 1;
+    const max = 20;
 
-  // результат операции
-  let result;
+    const numberOne = getRandomInt(min, max);
+    const numberSecond = getRandomInt(min, max);
+    // операция
+    const operationList = '+-*';
+    const indexOperation = getRandomInt(0, 3);
+    const operation = operationList[indexOperation];
+
+    const quastion = `${numberOne} ${operation} ${numberSecond}`;
+    const answer = String(resultOperation(operation, numberOne, numberSecond));
+    const pairQA = cons(quastion, answer);
+    return pairQA;
+  };
+
+  run(description, game);
+};
+const resultOperation = (operation, numberOne, numberSecond) => {
   switch (operation) {
     case '+':
-      result = addition(numberOne, numberSecond);
-      break;
+      return addition(numberOne, numberSecond);
     case '-':
-      result = substraction(numberOne, numberSecond);
-      break;
+      return substraction(numberOne, numberSecond);
     case '*':
-      result = multi(numberOne, numberSecond);
-      break;
+      return multi(numberOne, numberSecond);
     default:
-      console.log('Не корректная работа программы. Обратитесь к разработчику');
-  }
-
-  const questionParam = `${numberOne} ${operation} ${numberSecond}\n`;
-
-  const answer = Number(readlinesync.question(`Question: ${questionParam}`));
-
-  if (answer === result) return true;
-  if (Number.isNaN(answer)) {
-    console.log('You must enter a number');
-    return false;
-  }
-
-  console.log(`'${answer}' is wrong answer ;( Correct answer was '${result}'`);
-  return false;
+      break;
+    }  
 };
+const addition = (a, b) => a + b;
+const substraction = (a, b) => a - b;
+const multi = (a, b) => a * b;
 export default gameCalc;

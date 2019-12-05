@@ -1,4 +1,4 @@
 #!/usr/bin/nodejs
-import game from '../game/launcher';
+import calcGame from '../game/game-calc';
 
-game('brain-calc', 'What is the result of the expression?');
+calcGame();

@@ -1,5 +1,4 @@
 #!/usr/bin/nodejs
-import { nameQuestion, welcome } from '../index';
+import gameBrain from '../game/game-brain';
 
-welcome();
-nameQuestion();
+gameBrain();

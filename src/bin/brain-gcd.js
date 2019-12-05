@@ -1,4 +1,4 @@
 #!/usr/bin/nodejs
-import game from '../game/launcher';
+import gcdGame from '../game/game-gcd';
 
-game('brain-gcd', 'Find the greatest common divisor of given numbers.');
+gcdGame();

@@ -1,30 +1,49 @@
-import readlinesync from 'readline-sync';
-import { car, cdr } from '@hexlet/pairs';
-import { getRandomInt, arihmProgress } from '../index';
+import run from '../game/launcher';
+import { cons, car, cdr } from '@hexlet/pairs';
+import { getRandomInt } from '../index';
 
 const gameProgression = () => {
-  // подготавливаем параметры для получения пары - ответ, прогрессия
-  const start = getRandomInt(1, 20);
-  const length = 10;
-  const sub = getRandomInt(1, 11);
-  const pass = getRandomInt(1, length);
+  const description = 'What number is missing in the progression?';
+  const game = () => {
+    // подготавливаем параметры для получения пары - ответ, прогрессия
+    const start = getRandomInt(1, 20);
+    const length = 10;
+    const sub = getRandomInt(1, 11);
+    const pass = getRandomInt(1, length);
 
-  // получаем пару
-  const pairResult = arihmProgress(start, length, sub, pass);
-  // получаем строку для вывода на экран
-  const questionParam = cdr(pairResult);
-  // получаем верный ответ
-  const result = car(pairResult);
-
-  const answer = Number(readlinesync.question(`Question: ${questionParam}\n`));
-
-  if (answer === result) return true;
-  if (Number.isNaN(answer)) {
-    console.log('You must enter a number');
-    return false;
-  }
-
-  console.log(`'${answer}' is wrong answer ;( Correct answer was '${result}'`);
-  return false;
+    // получаем пару вопрос, ответ
+    const pairQA = arihmProgress(start, length, sub, pass);
+    return pairQA;
+  };
+  run(description, game);
 };
+
+// параметры:
+// start - первое число
+// length - последние число в прогрессии
+// sub - разность арифмитической прогрессии
+// pass - позиция числа которое будет пропушено
+// возвращает пару - вопрос - ответ
+// первый элемент - строка для вывода на экран
+// второй элемент - число которое пропустили
+const arihmProgress = (start, length, sub, pass) => {
+  const end = start + sub * (length - 1);
+  const answerMinusSub = start + sub * (pass - 1);
+
+  const iter = (counter, acc) => {
+    if (counter === end) {
+      return acc;
+    }
+    if (counter === answerMinusSub) {
+      const pair = cons(`${car(acc)} ..`, String(cdr(acc) + sub));
+      return iter(counter + sub, pair);
+    }
+    const pair = cons(`${car(acc)} ${counter + sub}`, cdr(acc));
+    return iter(counter + sub, pair);
+  };
+
+  const pair = iter(start, cons(String(start), answerMinusSub));
+  return pair;
+};
+
 export default gameProgression;

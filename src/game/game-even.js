@@ -1,26 +1,31 @@
 import readlinesync from 'readline-sync';
-import { getRandomInt, isEven } from '../index';
+import { getRandomInt } from '../index';
+import run from '../game/launcher';
+import { cons, car, cdr, toString } from '@hexlet/pairs';
+
 // функция игры четное\ нечетное
-const gameEven = () => {
-  // числа для диапозона выбора случайного числа
-  const min = 1;
-  const max = 101;
-  // константы ответов
-  const isYes = 'yes'; //
-  const isNo = 'no';
+const gameEven = () =>{
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  
+  const runGame = () => {
+    // числа для диапозона выбора случайного числа
+    const min = 1;
+    const max = 101;
+    // константы ответов
+    const isYes = 'yes'; //
+    const isNo = 'no';
 
-  const number = getRandomInt(min, max);
-  const answer = readlinesync.question(`Question: ${number}\n`);
-  console.log(`Your answer: ${answer}`);
-
-  if (isEven(number) && answer === isYes) return true;
-  if (!isEven(number) && answer === isNo) return true;
-  if (isEven(number) && answer !== isYes) {
-    console.log(`'${answer}' is wrong answer ;( Correct answer was '${isYes}'`);
-    return false;
-  }
-  console.log(`'${answer}' is wrong answer ;( Correct answer was '${isNo}'`);
-  return false;
+    const question = getRandomInt(min, max);
+    const answer = isEven(question) ? isYes : isNo;
+    // пара вопрос ответ
+    const pairQA = cons(question, answer);
+    return pairQA;
+  };
+  //const a = gameEven();
+  run(description, runGame);
 };
+
+// функция проверки числа на четность
+const isEven = (number) => number % 2 === 0;
 
 export default gameEven;

@@ -1,4 +1,4 @@
 #!/usr/bin/nodejs
-import game from '../game/launcher';
+import progressionGame from '../game/game-progression';
 
-game('brain-progression', 'What number is missing in the progression?');
+progressionGame();

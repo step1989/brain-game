@@ -1,4 +1,4 @@
 #!/usr/bin/nodejs
-import game from '../game/launcher';
+import evenGame from '../game/game-even';
 
-game('brain-even', 'Answer "yes" if the number is even, otherwise answer "no".');
+evenGame();

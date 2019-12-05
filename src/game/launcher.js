@@ -3,49 +3,44 @@ import calcGame from './game-calc';
 import gcdGame from './game-gcd';
 import primeGame from './game-prime';
 import progressionGame from './game-progression';
-import { nameQuestion, welcome } from '../index';
+import { cons,
+  car,
+  cdr,
+  isPair 
+} from '@hexlet/pairs';
+import readlinesync from 'readline-sync';
 
-const game = (gameNumber, description) => {
-  // приветствие
-  welcome();
-  // вывод описания игры
-  console.log(description);
-  // Спрашиваем и получаем имя игрока
-  const namePlayer = nameQuestion();
-  // что бы выиграть необходимо дать 3 верных ответа
-  // используем рекурсивную функцию
-  const step = (counter) => {
-    if (counter === 3) return true;
-    let resultGame;
+const run = (description, func) => {
+  console.log('Welcome to the Brain Games!')
+  if (description !== '') console.log(description +'\n');
+  
+  const namePlayer = readlinesync.question('May I have your name? ');
+  console.log(`Hello, ${namePlayer}!\n`);
 
-    switch (gameNumber) {
-      case 'brain-even':
-        resultGame = evenGame();
-        break;
-      case 'brain-calc':
-        resultGame = calcGame();
-        break;
-      case 'brain-gcd':
-        resultGame = gcdGame();
-        break;
-      case 'brain-progression':
-        resultGame = progressionGame();
-        break;
-      case 'brain-prime':
-        resultGame = primeGame();
-        break;
-      default:
+  if(!isPair(func())) return;
+
+  const iter = (counter) => {
+    if (counter === 3) {
+      console.log(`Congratulations, ${namePlayer}`);
+      return;
     }
-    // если ответ верный повторяем игру
-    if (resultGame) {
+    const resultFunc = func();
+    const question = car(resultFunc)
+    const answer = cdr(resultFunc);
+
+    const answerPlayer = readlinesync.question(`Question: ${question}\n`);
+
+    if (answer === answerPlayer){
       console.log('Correct!');
-      return step(counter + 1);
+    } else {
+      console.log(`${answerPlayer} is wrong answer ;( Correct answer was '${answer}`)
+      console.log(`Let's try again, ${namePlayer}!`);
+      return;
     }
-    // если ответ неверный завершаем игру
-    return false;
-  };
-  // запускаем рекурсивную функцию
-  if (step(0)) console.log(`Congratulations, ${namePlayer}!`);
-  else console.log(`Let's try again, ${namePlayer}!`);
+
+    return iter(counter + 1);
+  }
+  return iter(0);
 };
-export default game;
+
+export default run;
