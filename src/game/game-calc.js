@@ -1,5 +1,4 @@
-import { getRandomInt } from '../index';
-import run from '../game/launcher';
+import run from '../launcher';
 import { cons, car, cdr } from '@hexlet/pairs';
 
 // игра четное\ нечетное
@@ -42,4 +41,5 @@ const resultOperation = (operation, numberOne, numberSecond) => {
 const addition = (a, b) => a + b;
 const substraction = (a, b) => a - b;
 const multi = (a, b) => a * b;
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 export default gameCalc;

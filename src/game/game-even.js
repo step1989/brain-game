@@ -1,6 +1,5 @@
 import readlinesync from 'readline-sync';
-import { getRandomInt } from '../index';
-import run from '../game/launcher';
+import run from '../launcher';
 import { cons, car, cdr, toString } from '@hexlet/pairs';
 
 // функция игры четное\ нечетное
@@ -27,5 +26,7 @@ const gameEven = () =>{
 
 // функция проверки числа на четность
 const isEven = (number) => number % 2 === 0;
+
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 export default gameEven;

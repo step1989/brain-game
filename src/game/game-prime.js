@@ -1,5 +1,4 @@
-import { getRandomInt } from '../index';
-import run from '../game/launcher';
+import run from '../launcher';
 import { cons, car, cdr } from '@hexlet/pairs';
 // функция игры четное\ нечетное
 
@@ -34,5 +33,6 @@ const isPrime = (number) => {
   return true;
 };
 
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 export default gamePrime;

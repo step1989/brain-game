@@ -1,8 +1,3 @@
-import evenGame from './game-even';
-import calcGame from './game-calc';
-import gcdGame from './game-gcd';
-import primeGame from './game-prime';
-import progressionGame from './game-progression';
 import { cons,
   car,
   cdr,
@@ -10,7 +5,7 @@ import { cons,
 } from '@hexlet/pairs';
 import readlinesync from 'readline-sync';
 
-const run = (description, func) => {
+export const run = (description, func) => {
   console.log('Welcome to the Brain Games!')
   if (description !== '') console.log(description +'\n');
   

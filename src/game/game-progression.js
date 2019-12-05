@@ -1,6 +1,5 @@
-import run from '../game/launcher';
+import run from '../launcher';
 import { cons, car, cdr } from '@hexlet/pairs';
-import { getRandomInt } from '../index';
 
 const gameProgression = () => {
   const description = 'What number is missing in the progression?';
@@ -17,6 +16,8 @@ const gameProgression = () => {
   };
   run(description, game);
 };
+
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 // параметры:
 // start - первое число

@@ -1,6 +1,5 @@
 import readlinesync from 'readline-sync';
-import { getRandomInt } from '../index';
-import run from '../game/launcher';
+import run from '../launcher';
 import { cons, car, cdr, toString } from '@hexlet/pairs';
 
 const gameGcd = () => {
@@ -24,5 +23,7 @@ const nod = (a, b) => {
   if (b === 0) return a;
   return nod(b, a % b);
 };
+
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 export default gameGcd;
