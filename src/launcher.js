@@ -8,9 +8,9 @@ export const run = (description, func) => {
   console.log(`Hello, ${namePlayer}!\n`);
 
   if (!isPair(func())) return;
-
+  const gameCount = 3;
   const iter = (counter) => {
-    if (counter === 3) {
+    if (counter === gameCount) {
       console.log(`Congratulations, ${namePlayer}`);
       return;
     }
