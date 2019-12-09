@@ -2,6 +2,7 @@ import { cons } from '@hexlet/pairs';
 import runGame from '../launcher';
 import random from '../lib/secondary-function';
 
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (number) => {
   if (number < 2) {
     console.log('number must be greater 1');
@@ -14,7 +15,6 @@ const isPrime = (number) => {
 };
 // функция игры четное\ нечетное
 const gamePrime = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const game = () => {
     // числа для диапозона выбора случайного числа
     const min = 2;

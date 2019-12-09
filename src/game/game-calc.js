@@ -2,6 +2,7 @@ import { cons } from '@hexlet/pairs';
 import runGame from '../launcher';
 import random from '../lib/secondary-function';
 
+const description = 'What is the result of the expression?';
 const addition = (a, b) => a + b;
 const substraction = (a, b) => a - b;
 const multi = (a, b) => a * b;
@@ -19,8 +20,6 @@ const resultOperation = (operation, numberOne, numberSecond) => {
 };
 // игра четное\ нечетное
 const gameCalc = () => {
-  const description = 'What is the result of the expression?';
-
   const game = () => {
     const min = 1;
     const max = 20;

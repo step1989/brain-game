@@ -1,6 +1,8 @@
 import { cons, car, cdr } from '@hexlet/pairs';
 import runGame from '../launcher';
 import random from '../lib/secondary-function';
+
+const description = 'What number is missing in the progression?';
 // параметры:
 // start - первое число
 // length - последние число в прогрессии
@@ -30,7 +32,6 @@ const arihmProgress = (start, length, sub, pass) => {
 };
 
 const gameProgression = () => {
-  const description = 'What number is missing in the progression?';
   const game = () => {
     // подготавливаем параметры для получения пары - ответ, прогрессия
     const start = random(1, 20);
