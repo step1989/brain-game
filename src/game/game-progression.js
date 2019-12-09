@@ -5,7 +5,7 @@ import random from '../lib/secondary-function';
 const description = 'What number is missing in the progression?';
 // параметры:
 // start - первое число
-// length - последние число в прогрессии
+// length - количество сгенерированных чисел в прогресии
 // sub - разность арифмитической прогрессии
 // pass - позиция числа которое будет пропушено
 // возвращает пару - вопрос - ответ
@@ -36,7 +36,7 @@ const gameProgression = () => {
     // подготавливаем параметры для получения пары - ответ, прогрессия
     const start = random(1, 20);
     const length = 10;
-    const sub = random(1, 11);
+    const sub = random(1, length);
     const pass = random(1, length);
 
     // получаем пару вопрос, ответ

@@ -20,11 +20,11 @@ const gamePrime = () => {
     const min = 2;
     const max = 101;
     // константы ответов
-    const isYes = 'yes'; //
-    const isNo = 'no';
+    const yes = 'yes'; //
+    const no = 'no';
 
     const question = random(min, max);
-    const answer = isPrime(question) ? isYes : isNo;
+    const answer = isPrime(question) ? yes : no;
     // пара вопрос ответ
     const pairQA = cons(question, answer);
     return pairQA;

@@ -6,7 +6,7 @@ const description = 'What is the result of the expression?';
 const addition = (a, b) => a + b;
 const substraction = (a, b) => a - b;
 const multi = (a, b) => a * b;
-const resultOperation = (operation, numberOne, numberSecond) => {
+const getResultOperation = (operation, numberOne, numberSecond) => {
   switch (operation) {
     case '+':
       return addition(numberOne, numberSecond);
@@ -33,7 +33,7 @@ const gameCalc = () => {
     const operation = operationList[indexOperation];
 
     const quastion = `${numberOne} ${operation} ${numberSecond}`;
-    const answer = String(resultOperation(operation, numberOne, numberSecond));
+    const answer = String(getResultOperation(operation, numberOne, numberSecond));
     const pairQA = cons(quastion, answer);
     return pairQA;
   };

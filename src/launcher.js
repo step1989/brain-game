@@ -8,6 +8,7 @@ export const run = (description, func) => {
   console.log(`Hello, ${namePlayer}!\n`);
 
   if (!isPair(func())) return;
+
   const gameCount = 3;
   const iter = (counter) => {
     if (counter === gameCount) {

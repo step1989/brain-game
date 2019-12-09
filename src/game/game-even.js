@@ -12,11 +12,11 @@ const gameEven = () => {
     const min = 1;
     const max = 101;
     // константы ответов
-    const isYes = 'yes'; //
-    const isNo = 'no';
+    const yes = 'yes'; //
+    const no = 'no';
 
     const question = random(min, max);
-    const answer = isEven(question) ? isYes : isNo;
+    const answer = isEven(question) ? yes : no;
     // пара вопрос ответ
     const pairQA = cons(question, answer);
     return pairQA;
