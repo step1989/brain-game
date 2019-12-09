@@ -26,9 +26,10 @@ const gameCalc = () => {
 
     const numberOne = random(min, max);
     const numberSecond = random(min, max);
-    // операция
     const operationList = '+-*';
-    const indexOperation = random(0, 3);
+    const startIndex = 0;
+    const endIndex = operationList.length - 1;
+    const indexOperation = random(startIndex, endIndex);
     const operation = operationList[indexOperation];
 
     const quastion = `${numberOne} ${operation} ${numberSecond}`;

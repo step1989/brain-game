@@ -5,7 +5,6 @@ import random from '../lib/secondary-function';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (number) => {
   if (number < 2) {
-    console.log('number must be greater 1');
     return false;
   }
   for (let i = 2; i < number; i += 1) {
