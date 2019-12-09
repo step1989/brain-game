@@ -16,7 +16,6 @@ const isPrime = (number) => {
 // функция игры четное\ нечетное
 const gamePrime = () => {
   const game = () => {
-    // числа для диапозона выбора случайного числа
     const min = 2;
     const max = 101;
     // константы ответов

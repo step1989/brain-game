@@ -8,7 +8,6 @@ const isEven = (number) => number % 2 === 0;
 // функция игры четное\ нечетное
 const gameEven = () => {
   const game = () => {
-    // числа для диапозона выбора случайного числа
     const min = 1;
     const max = 101;
     // константы ответов

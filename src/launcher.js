@@ -1,4 +1,4 @@
-import { car, cdr, isPair } from '@hexlet/pairs';
+import { car, cdr } from '@hexlet/pairs';
 import readlinesync from 'readline-sync';
 
 export const run = (description, func) => {
