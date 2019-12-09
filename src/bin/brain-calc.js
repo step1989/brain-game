@@ -1,4 +1,4 @@
-#!/usr/bin/nodejs
+#!/usr/bin/env nodejs
 import calcGame from '../game/game-calc';
 
 calcGame();
