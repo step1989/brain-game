@@ -3,11 +3,9 @@ import readlinesync from 'readline-sync';
 
 export const run = (description, func) => {
   console.log('Welcome to the Brain Games!');
-  if (description !== '') console.log(`${description}\n`);
+  console.log(`${description}\n`);
   const namePlayer = readlinesync.question('May I have your name? ');
   console.log(`Hello, ${namePlayer}!\n`);
-
-  if (!isPair(func())) return;
 
   const gameCount = 3;
   const iter = (counter) => {
