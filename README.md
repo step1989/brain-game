@@ -6,21 +6,20 @@
 
 ### Установка
 ```sudo npm install -g brain-games-rsv```
-> [![asciicast](https://asciinema.org/a/Lid4WwtFj2N4HX4gJccJfcFSg.svg)](https://asciinema.org/a/Lid4WwtFj2N4HX4gJccJfcFSg)
+> [![asciicast](https://asciinema.org/a/287430.svg)](https://asciinema.org/a/287430)
 ##### Список игр:
 ##### brain-even
 > Игра проверка на четность. Необходимо ответить четное число или нет.
-> [![asciicast](https://asciinema.org/a/BW5rolYm4FmR1NiMn8s1VzF7Q.svg)](https://asciinema.org/a/BW5rolYm4FmR1NiMn8s1VzF7Q)
+> [![asciicast](https://asciinema.org/a/kxlKWTGMyTZDe994cAh2ZOeFn.svg)](https://asciinema.org/a/kxlKWTGMyTZDe994cAh2ZOeFn)
 ##### brain-calc
 > Игра на вычисление математических операций.
-> [![asciicast](https://asciinema.org/a/eZmBh6DOaoWlAkHCtTa8v6rUX.svg)](https://asciinema.org/a/eZmBh6DOaoWlAkHCtTa8v6rUX)
+> [![asciicast](https://asciinema.org/a/ViHqudDWjj97YQrxh2lIdAWfP.svg)](https://asciinema.org/a/ViHqudDWjj97YQrxh2lIdAWfP)
 ##### brain-gcd
 > Игра на вычисление наименьшего общего делителя двух чисел.
-> [![asciicast](https://asciinema.org/a/fCilE0XC3BajQkf85XSymqqsq.svg)](https://asciinema.org/a/fCilE0XC3BajQkf85XSymqqsq)
+> [![asciicast](https://asciinema.org/a/49rxXKWYnxWpXQgyQADMBmDqM.svg)](https://asciinema.org/a/49rxXKWYnxWpXQgyQADMBmDqM)
 ##### brain-progression
 > Игра на определение пропущенного числа в арифмитической прогрессии
-> [![asciicast](https://asciinema.org/a/GZwaIAIoI9IgvNQ1fj6thh7s7.svg)](https://asciinema.org/a/GZwaIAIoI9IgvNQ1fj6thh7s7)
+> [![asciicast](https://asciinema.org/a/Izu37q2OKipx4B5bC7BVQ37Ib.svg)](https://asciinema.org/a/Izu37q2OKipx4B5bC7BVQ37Ib)
 ##### brain-prime
 > Игра на определение является ли число простым
-> [![asciicast](https://asciinema.org/a/npwgCBIDxr7PCFgwvWoBzbBw8.svg)](https://asciinema.org/a/npwgCBIDxr7PCFgwvWoBzbBw8)
-
+>[![asciicast](https://asciinema.org/a/UUnR1nrIiKilCKOZVI8AUSF8B.svg)](https://asciinema.org/a/UUnR1nrIiKilCKOZVI8AUSF8B)
