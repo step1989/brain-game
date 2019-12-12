@@ -1,50 +1,33 @@
-import { cons, car, cdr } from '@hexlet/pairs';
+import { cons } from '@hexlet/pairs';
 import runGame from '../launcher';
 import random from '../lib/secondary-function';
 
 const description = 'What number is missing in the progression?';
-// параметры:
-// start - первое число
-// length - количество сгенерированных чисел в прогресии
-// sub - разность арифмитической прогрессии
-// pass - позиция числа которое будет пропушено
-// возвращает пару - вопрос - ответ
-// первый элемент - строка для вывода на экран
-// второй элемент - число которое пропустили
-const arihmProgress = (start, length, sub, pass) => {
-  const end = start + sub * (length - 1);
-  const answerMinusSub = start + sub * (pass - 1);
+const passSymbol = '..';
+const countElements = 10;
 
+const getArithmeticProgression = (firstElement, amountElements, diffProgression) => {
+  const lastElement = firstElement + diffProgression * (amountElements - 1);
   const iter = (counter, acc) => {
-    if (counter === end) {
+    if (counter === lastElement) {
       return acc;
     }
-    if (counter === answerMinusSub) {
-      const pair = cons(`${car(acc)} ..`, String(cdr(acc) + sub));
-      return iter(counter + sub, pair);
-    }
-    const pair = cons(`${car(acc)} ${counter + sub}`, cdr(acc));
-    return iter(counter + sub, pair);
+    const nextElement = counter + diffProgression;
+    return iter(nextElement, `${acc} ${nextElement}`);
   };
-
-  const pair = iter(start, cons(String(start), answerMinusSub));
-  return pair;
+  return iter(firstElement, String(firstElement));
 };
 
-const gameProgression = () => {
-  const game = () => {
-    // подготавливаем параметры для получения пары - ответ, прогрессия
-    const start = random(1, 20);
-    const length = 10;
-    const sub = random(1, length);
-    const pass = random(1, length);
-
-    // получаем пару вопрос, ответ
-    const pairQA = arihmProgress(start, length, sub, pass);
-    return pairQA;
-  };
-  runGame(description, game);
+const game = () => {
+  const firstElement = random(1, 20);
+  const diffProgression = random(1, countElements);
+  const arithmProgression = getArithmeticProgression(firstElement, countElements, diffProgression);
+  const answer = String(firstElement + diffProgression * (random(1, countElements) - 1));
+  const question = arithmProgression.replace(answer, passSymbol);
+  const pairQuestionAnswer = cons(question, answer);
+  return pairQuestionAnswer;
 };
 
+runGame(description, game);
 
-export default gameProgression;
+export default game;

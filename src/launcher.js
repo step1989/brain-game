@@ -7,9 +7,9 @@ export const run = (description, func) => {
   const namePlayer = readlinesync.question('May I have your name? ');
   console.log(`Hello, ${namePlayer}!\n`);
 
-  const gameCount = 3;
+  const gamesCount = 3;
   const iter = (counter) => {
-    if (counter === gameCount) {
+    if (counter === gamesCount) {
       console.log(`Congratulations, ${namePlayer}`);
       return;
     }
@@ -22,7 +22,7 @@ export const run = (description, func) => {
     if (answer === answerPlayer) {
       console.log('Correct!');
     } else {
-      console.log(`${answerPlayer} is wrong answer ;( Correct answer was '${answer}`);
+      console.log(`'${answerPlayer}' is wrong answer ;( Correct answer was '${answer}'`);
       console.log(`Let's try again, ${namePlayer}!`);
       return;
     }

@@ -3,31 +3,33 @@ import runGame from '../launcher';
 import random from '../lib/secondary-function';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const isPrime = (number) => {
-  if (number < 2) {
+const min = 2;
+const max = 100;
+// константы ответов
+const yes = 'yes'; //
+const no = 'no';
+
+const isPrime = (a) => {
+  if (a < 2) {
     return false;
   }
-  const divisor = number / 2;
+
+  const divisor = a / 2;
+
   for (let i = 2; i <= divisor; i += 1) {
-    if (number % i === 0) return false;
+    if (a % i === 0) return false;
   }
   return true;
 };
 // функция игры четное\ нечетное
-const gamePrime = () => {
-  const game = () => {
-    const min = 2;
-    const max = 101;
-    // константы ответов
-    const yes = 'yes'; //
-    const no = 'no';
-
-    const question = random(min, max);
-    const answer = isPrime(question) ? yes : no;
-    // пара вопрос ответ
-    const pairQA = cons(question, answer);
-    return pairQA;
-  };
-  runGame(description, game);
+const game = () => {
+  const question = random(min, max);
+  const answer = isPrime(question) ? yes : no;
+  // пара вопрос ответ
+  const pairQuestionAnswer = cons(question, answer);
+  return pairQuestionAnswer;
 };
-export default gamePrime;
+
+runGame(description, game);
+
+export default game;
