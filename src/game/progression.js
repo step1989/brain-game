@@ -4,7 +4,7 @@ import random from '../lib/secondary-function';
 
 const description = 'What number is missing in the progression?';
 const passSymbol = '..';
-const countElements = 10;
+const length = 10;
 
 const getArithmeticProgression = (firstElement, amountElements, diffProgression) => {
   const lastElement = firstElement + diffProgression * (amountElements - 1);
@@ -18,16 +18,17 @@ const getArithmeticProgression = (firstElement, amountElements, diffProgression)
   return iter(firstElement, String(firstElement));
 };
 
-const game = () => {
+const getQuastionAndAnswer = () => {
   const firstElement = random(1, 20);
-  const diffProgression = random(1, countElements);
-  const arithmProgression = getArithmeticProgression(firstElement, countElements, diffProgression);
-  const answer = String(firstElement + diffProgression * (random(1, countElements) - 1));
+  const diffProgression = random(1, length);
+  const indexMissedItem = random(1, length) - 1;
+  const arithmProgression = getArithmeticProgression(firstElement, length, diffProgression);
+  const answer = String(firstElement + diffProgression * indexMissedItem);
   const question = arithmProgression.replace(answer, passSymbol);
-  const pairQuestionAnswer = cons(question, answer);
-  return pairQuestionAnswer;
+  const pairQuestionAndAnswer = cons(question, answer);
+  return pairQuestionAndAnswer;
 };
 
-runGame(description, game);
+runGame(description, getQuastionAndAnswer);
 
-export default game;
+export default getQuastionAndAnswer;

@@ -1,4 +1,4 @@
 #!/usr/bin/env nodejs
-import gcdGame from '../game/game-gcd';
+import gcdGame from '../game/gcd';
 
 gcdGame();

@@ -5,8 +5,7 @@ import random from '../lib/secondary-function';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const min = 2;
 const max = 100;
-// константы ответов
-const yes = 'yes'; //
+const yes = 'yes';
 const no = 'no';
 
 const isPrime = (a) => {
@@ -21,15 +20,13 @@ const isPrime = (a) => {
   }
   return true;
 };
-// функция игры четное\ нечетное
-const game = () => {
+const getQuastionAndAnswer = () => {
   const question = random(min, max);
   const answer = isPrime(question) ? yes : no;
-  // пара вопрос ответ
-  const pairQuestionAnswer = cons(question, answer);
-  return pairQuestionAnswer;
+  const pairQuestionAndAnswer = cons(question, answer);
+  return pairQuestionAndAnswer;
 };
 
-runGame(description, game);
+runGame(description, getQuastionAndAnswer);
 
-export default game;
+export default getQuastionAndAnswer;

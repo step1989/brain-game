@@ -5,20 +5,16 @@ import random from '../lib/secondary-function';
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const min = 1;
 const max = 100;
-// константы ответов
-const yes = 'yes'; //
+const yes = 'yes';
 const no = 'no';
-// функция проверки числа на четность
 const isEven = (number) => number % 2 === 0;
-// функция игры четное\ нечетное
-const game = () => {
+const getQuastionAndAnswer = () => {
   const question = random(min, max);
   const answer = isEven(question) ? yes : no;
-  // пара вопрос ответ
-  const pairQuestionAnswer = cons(question, answer);
-  return pairQuestionAnswer;
+  const pairQuestionAndAnswer = cons(question, answer);
+  return pairQuestionAndAnswer;
 };
 
-runGame(description, game);
+runGame(description, getQuastionAndAnswer);
 
-export default game;
+export default getQuastionAndAnswer;
