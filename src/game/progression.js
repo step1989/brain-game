@@ -6,9 +6,9 @@ const description = 'What number is missing in the progression?';
 const passSymbol = '..';
 const length = 10;
 
-const getArithmeticProgression = (start, length, diff) => {
+const getArithmeticProgression = (start, lengthProgression, diff) => {
   const iter = (index, acc) => {
-    if (index === length) {
+    if (index === lengthProgression) {
       return acc;
     }
     const nextElement = start + diff * index;
@@ -20,7 +20,7 @@ const getArithmeticProgression = (start, length, diff) => {
 const getQuastionAndAnswer = () => {
   const start = random(1, 20);
   const diff = random(1, 15);
-  const missedItemIndex = random(1, length-1);
+  const missedItemIndex = random(1, length - 1);
   const arithmeticProgression = getArithmeticProgression(start, length, diff);
   const answer = String(start + diff * missedItemIndex);
   const question = arithmeticProgression.replace(answer, passSymbol);
