@@ -21,12 +21,12 @@ const getArithmeticProgression = (firstElement, amountElements, diffProgression)
 const getQuastionAndAnswer = () => {
   const firstElement = random(1, 20);
   const diffProgression = random(1, length);
-  const indexMissedItem = random(1, length) - 1;
+  const missedItemIndex = random(1, length-1);
   const arithmProgression = getArithmeticProgression(firstElement, length, diffProgression);
-  const answer = String(firstElement + diffProgression * indexMissedItem);
+  const answer = String(firstElement + diffProgression * missedItemIndex);
   const question = arithmProgression.replace(answer, passSymbol);
-  const pairQuestionAndAnswer = cons(question, answer);
-  return pairQuestionAndAnswer;
+  const questionAndAnswer = cons(question, answer);
+  return questionAndAnswer;
 };
 
 runGame(description, getQuastionAndAnswer);

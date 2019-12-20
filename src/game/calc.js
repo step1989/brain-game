@@ -35,8 +35,8 @@ const getQuastionAndAnswer = () => {
 
   const question = `${a} ${operation} ${b}`;
   const answer = String(getAnswer(operation, a, b));
-  const pairQuestionAndAnswer = cons(question, answer);
-  return pairQuestionAndAnswer;
+  const questionAndAnswer = cons(question, answer);
+  return questionAndAnswer;
 };
 
 runGame(description, getQuastionAndAnswer);

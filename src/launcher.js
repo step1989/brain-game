@@ -14,9 +14,9 @@ const run = (description, getQuastionAndAnswer) => {
       console.log(`Congratulations, ${namePlayer}`);
       return;
     }
-    const pairQuastionAndAnswer = getQuastionAndAnswer();
-    const question = car(pairQuastionAndAnswer);
-    const answer = cdr(pairQuastionAndAnswer);
+    const questionAndAnswer = getQuastionAndAnswer();
+    const question = car(questionAndAnswer);
+    const answer = cdr(questionAndAnswer);
 
     const answerPlayer = readlinesync.question(`Question: ${question}\n`);
 

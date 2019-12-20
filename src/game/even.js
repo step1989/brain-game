@@ -11,8 +11,8 @@ const isEven = (number) => number % 2 === 0;
 const getQuastionAndAnswer = () => {
   const question = random(min, max);
   const answer = isEven(question) ? yes : no;
-  const pairQuestionAndAnswer = cons(question, answer);
-  return pairQuestionAndAnswer;
+  const questionAndAnswer = cons(question, answer);
+  return questionAndAnswer;
 };
 
 runGame(description, getQuastionAndAnswer);

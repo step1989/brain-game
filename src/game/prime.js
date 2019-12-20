@@ -23,8 +23,8 @@ const isPrime = (a) => {
 const getQuastionAndAnswer = () => {
   const question = random(min, max);
   const answer = isPrime(question) ? yes : no;
-  const pairQuestionAndAnswer = cons(question, answer);
-  return pairQuestionAndAnswer;
+  const questionAndAnswer = cons(question, answer);
+  return questionAndAnswer;
 };
 
 runGame(description, getQuastionAndAnswer);
