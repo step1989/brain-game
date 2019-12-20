@@ -6,25 +6,24 @@ const description = 'What number is missing in the progression?';
 const passSymbol = '..';
 const length = 10;
 
-const getArithmeticProgression = (firstElement, amountElements, diffProgression) => {
-  const lastElement = firstElement + diffProgression * (amountElements - 1);
-  const iter = (counter, acc) => {
-    if (counter === lastElement) {
+const getArithmeticProgression = (start, length, diff) => {
+  const iter = (index, acc) => {
+    if (index === length) {
       return acc;
     }
-    const nextElement = counter + diffProgression;
-    return iter(nextElement, `${acc} ${nextElement}`);
+    const nextElement = start + diff * index;
+    return iter(index + 1, `${acc} ${nextElement}`);
   };
-  return iter(firstElement, String(firstElement));
+  return iter(0, '');
 };
 
 const getQuastionAndAnswer = () => {
-  const firstElement = random(1, 20);
-  const diffProgression = random(1, length);
+  const start = random(1, 20);
+  const diff = random(1, 15);
   const missedItemIndex = random(1, length-1);
-  const arithmProgression = getArithmeticProgression(firstElement, length, diffProgression);
-  const answer = String(firstElement + diffProgression * missedItemIndex);
-  const question = arithmProgression.replace(answer, passSymbol);
+  const arithmeticProgression = getArithmeticProgression(start, length, diff);
+  const answer = String(start + diff * missedItemIndex);
+  const question = arithmeticProgression.replace(answer, passSymbol);
   const questionAndAnswer = cons(question, answer);
   return questionAndAnswer;
 };
