@@ -3,7 +3,7 @@ import readlinesync from 'readline-sync';
 
 const gamesCount = 3;
 
-const run = (description, getQuastionAndAnswer) => {
+const run = (description, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${description}\n`);
   const namePlayer = readlinesync.question('May I have your name? ');
@@ -14,7 +14,7 @@ const run = (description, getQuastionAndAnswer) => {
       console.log(`Congratulations, ${namePlayer}`);
       return;
     }
-    const questionAndAnswer = getQuastionAndAnswer();
+    const questionAndAnswer = getQuestionAndAnswer();
     const question = car(questionAndAnswer);
     const answer = cdr(questionAndAnswer);
 

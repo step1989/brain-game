@@ -28,17 +28,16 @@ const getAnswer = (operation, a, b) => {
   }
 };
 
-const getQuastionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const a = random(min, max);
   const b = random(min, max);
   const operation = operations[random(startIndex, endIndex)];
 
   const question = `${a} ${operation} ${b}`;
   const answer = String(getAnswer(operation, a, b));
-  const questionAndAnswer = cons(question, answer);
-  return questionAndAnswer;
+  return cons(question, answer);
 };
 
-runGame(description, getQuastionAndAnswer);
+runGame(description, getQuestionAndAnswer);
 
-export default getQuastionAndAnswer;
+export default getQuestionAndAnswer;

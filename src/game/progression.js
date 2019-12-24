@@ -17,17 +17,16 @@ const getArithmeticProgression = (start, lengthProgression, diff) => {
   return iter(0, '');
 };
 
-const getQuastionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const start = random(1, 20);
   const diff = random(1, 15);
   const missedItemIndex = random(1, length - 1);
   const arithmeticProgression = getArithmeticProgression(start, length, diff);
   const answer = String(start + diff * missedItemIndex);
   const question = arithmeticProgression.replace(answer, passSymbol);
-  const questionAndAnswer = cons(question, answer);
-  return questionAndAnswer;
+  return cons(question, answer);
 };
 
-runGame(description, getQuastionAndAnswer);
+runGame(description, getQuestionAndAnswer);
 
-export default getQuastionAndAnswer;
+export default getQuestionAndAnswer;

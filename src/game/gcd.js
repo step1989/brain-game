@@ -16,8 +16,7 @@ const getQuastionAndAnswer = () => {
 
   const quastion = `${a} ${b}`;
   const answer = String(getGcd(a, b));
-  const questionAndAnswer = cons(quastion, answer);
-  return questionAndAnswer;
+  return cons(quastion, answer);
 };
 
 runGame(description, getQuastionAndAnswer);

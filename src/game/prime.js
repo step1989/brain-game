@@ -5,28 +5,27 @@ import random from '../lib/secondary-function';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const min = 2;
 const max = 100;
-const yes = 'yes';
-const no = 'no';
+const confirmation = 'yes';
+const negation = 'no';
 
 const isPrime = (a) => {
   if (a < 2) {
     return false;
   }
 
-  const divisor = a / 2;
+  const limiter = a / 2;
 
-  for (let i = 2; i <= divisor; i += 1) {
+  for (let i = 2; i <= limiter; i += 1) {
     if (a % i === 0) return false;
   }
   return true;
 };
-const getQuastionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const question = random(min, max);
-  const answer = isPrime(question) ? yes : no;
-  const questionAndAnswer = cons(question, answer);
-  return questionAndAnswer;
+  const answer = isPrime(question) ? confirmation : negation;
+  return cons(question, answer);
 };
 
-runGame(description, getQuastionAndAnswer);
+runGame(description, getQuestionAndAnswer);
 
-export default getQuastionAndAnswer;
+export default getQuestionAndAnswer;
