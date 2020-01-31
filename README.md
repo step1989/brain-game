@@ -1,5 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/8003a80db5fd5fb00173/maintainability)](https://codeclimate.com/github/step1989/frontend-project-lvl1/maintainability)
-[![Build Status](https://travis-ci.org/step1989/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/step1989/frontend-project-lvl1)
+[![Build Status](https://travis-ci.org/step1989/brain-game.svg?branch=master)](https://travis-ci.org/step1989/brain-game)
 
 # Проект Game Brains
 Набор консольных игр. Для победы необходимо дать три верных ответа
